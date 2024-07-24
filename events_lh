@@ -1,0 +1,23 @@
+Mouse Evenets:
+1.click
+2.double click(ondblclick)
+3.mouseover
+4.mouseout
+5.mouse move
+
+Keyboard Events
+1.Key down
+2.Key up
+3.Key Press
+
+Focus events
+1.focus
+2.blur
+3.focusin
+4.focusout
+
+Form Events 
+1.submit
+2.reset
+3.change
+4.input

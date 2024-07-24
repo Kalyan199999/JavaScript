@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+
+        *{
+            margin: 0;
+        }
+
+        #container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            background-color: gray;
+        }
+
+        #container1,#container2,#container3,#container4{
+            width: 25%;
+            height: 25%;
+            background-color: black;
+            color: white;
+            margin: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #container4{
+            flex-direction: column;
+        }
+
+        #input{
+            width: 250px;
+            height: 30px;
+            border:  1px solid blue;
+            border-radius: 5px;
+            margin-bottom: 5px;
+
+        }
+        
+
+        .btn , #btn1,#btn2{
+            width: 250px;
+            height: 50px;
+            background-color:blue;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:450px) {
+           #container{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+           }
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="container">
+        
+        <!-- inline event -->
+    <div id="container1">
+        <button class="btn" onclick="document.getElementById('container1').style.backgroundColor='green'" >
+            change background
+        </button>
+    </div>
+
+    <!-- using the named function -->
+
+    <div id="container2">
+        <button class="btn" onclick="changeBAC()" ondblclick="alert('This is double click!')">
+            change background
+        </button>
+    </div>
+
+    <div id="container3">
+
+        <button id="btn1">
+            change background
+        </button>
+
+    </div>
+
+    <div id="container4">
+
+        <input type="text" id="input">
+        <button id="btn2">
+            change background
+        </button>
+
+    </div>
+
+</div>
+
+    <script>
+        
+        function changeBAC()
+        {
+            let bac = document.getElementById("container2");
+            bac.style.backgroundColor = "red";
+            bac.style.borderRadius = "150px";
+        }
+
+
+        function change() {
+            let bac = document.getElementById("container3");
+            bac.style.backgroundColor = "violet";
+            bac.borderRadius = "50px";
+
+        }
+
+        let btn1 = document.getElementById("btn1");
+        // don't use () such that it will not call immediately
+        btn1.onclick = change;
+
+        // annonomus function
+        btn1.ondblclick = function(){
+            let bac = document.getElementById("container3");
+            bac.style.borderRadius = "50px";
+        } ;
+
+
+        // using addEventListerners
+        let btn2 = document.getElementById("btn2");
+
+        btn2.addEventListener('click', (e)=>{
+            let bac = document.getElementById("container4");
+            bac.style.backgroundColor = "white";
+            bac.style.border = "5px dotted blue";
+
+            console.log(e);
+
+            // console.log(btn2.parentElement.getAttribute("id"));
+        } );
+
+        let input = document.getElementById("input");
+        
+        input.addEventListener('focus' , (event)=>{
+
+            input.style.backgroundColor = "red";
+            console.log(event.target);
+
+        } );
+
+    </script>
+
+</body>
+</html>

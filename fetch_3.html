@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecth</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        thead tr{
+            background-color: violet;
+            color: black;
+            font-size: 20px;
+        }
+
+        th{
+            padding: 20px;
+            margin: 30px;
+            
+            text-align: center;
+        }
+
+        tbody tr{
+            font-size: 20px;
+            height: 35px;
+            
+            text-align: center;
+
+            color: brown;
+        }
+
+        tbody tr:nth-child(even){
+            background-color: gray
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>PRICE</th>
+                    <th>CATEGORY</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <script>
+
+        let url = "https://fakestoreapi.com/products";
+
+        let x = fetch(url);
+
+        let y = x.then((res)=>{
+            return res.json();
+        })
+
+        let z = y.then((res)=>{
+            console.log(res);
+            products(res)
+        })
+
+        function products(p) {
+            let items = "";
+
+            for(let i=0;i<p.length;i++)
+        {
+            items += ` <tr id=${p[i]['id']}>
+                    <td>${p[i]['id']}</td>
+                    <td>${p[i]['title']}</td>
+                    <td>${p[i]['price']}</td>
+                    <td>${p[i]['category']}</td>
+                    
+                </tr>`
+            ;
+        }
+
+        let tbody = document.querySelector('tbody');
+        tbody.innerHTML = items;
+        }
+    </script>
+</body>
+</html>

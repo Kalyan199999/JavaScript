@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+    <div id="first">
+        <p>First Para in dision-1</p>
+        <p>Second Para in dision-1</p>
+    </div>
+
+    <hr>
+
+    <div id="second">
+        <p id="secondfirst">First Para in division-2</p>
+     
+        <p id="secondlast">Second Para in division-2</p>
+    </div>
+
+    <script>
+        // creating a new element
+        let h1 = document.createElement('h1');
+        // console.log(h1);
+
+        // adding the content to the element
+        h1.innerText = "This Element is Creted using Java Script";
+        console.log(h1);
+
+        // append new element to the html
+        let parent = document.getElementById('first');
+        console.log(parent);
+        parent.appendChild(h1);
+
+        console.log(parent.innerHTML);
+        console.log(parent.innerText);
+
+
+        
+
+        let h2 = document.createElement("h2");
+        h2.innerHTML = "this is a Third Para in division-2";
+
+        let p = document.getElementById('second');
+        // p.appendChild(h2);
+
+        // add element at the before any element
+        let last = document.getElementById('secondlast');
+        p.insertBefore(h2,last);
+
+
+        // removing the elements
+        let para = document.getElementById('secondfirst');
+        // p.remove();
+        // removing the child
+        // p.removeChild(para);
+        
+
+        let x = document.createElement('p');
+        x.innerText = "this is a replaced para in division-2";
+        // replace element
+        para.replaceChildren(x);
+
+        // console.log(p);
+
+        
+    </script>
+</body>
+</html>

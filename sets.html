@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+<body>
+    <h1>Sets</h1>
+    <script>
+        let s1 = new Set();
+        console.log("duplicates are not taken.....");
+        console.log(s1);
+
+        s1.add(10);
+        s1.add(20);
+        s1.add(30);
+
+        s1.add(10);
+        s1.add(20);
+        s1.add(30);
+        console.log(s1);
+
+        s1.add(40).add(50).add(60).add(70);
+        console.log(s1);
+
+        console.log("Converting array to set");
+        let arr1 = [1,2,3,4,5,6,7,2,5,1,5,5];
+        console.log(arr1);
+
+        let s2 = new Set(arr1);
+        console.log(s2);
+
+
+        let s = "pavan kalyan";
+        let s3 = new Set(s);
+        console.log(s3);
+
+        console.log(s3.delete('k'));
+        console.log(s3.delete('x'));
+        console.log(s3);
+        
+        console.log(s3.has('p'));
+        console.log(s3.size);
+
+        s3.clear()
+
+        console.log(s3);
+
+        console.log(s1.entries());
+
+        s1.forEach((ele)=>{
+            console.log(ele );
+        })
+
+    </script>
+</body>
+</html>

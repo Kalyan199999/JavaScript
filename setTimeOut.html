@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out</title>
+</head>
+<body>
+
+    <h1>Set Time Out</h1>
+
+    <script>
+        console.log("pavan");
+
+        let x = setTimeout((nam)=>{
+            console.log(nam);
+            alert("Hello Set Time Out "+nam);
+        } , 3000 , "Gottapu");
+
+        // clearInterval(x);
+        console.log("kalyan");
+
+        let sq = setTimeout(square , 2000 , [5 , 3]);
+
+        function square(a)
+        {
+            console.log( a[0]*a[1] );
+        }
+
+        // setInterval
+
+        let count = 1;
+        // counter method will be called for every 2000 milli sec
+
+        let y = setInterval(counter , 2000);
+        
+        function counter()
+        {
+            console.log(count);
+            count++;
+
+            if(count > 10)
+            {
+                // stops the function calls if count >10
+              clearInterval(y);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+
+</head>
+<body>
+
+    <h1>Async</h1>
+
+    <script>
+        // if write async before any function then the function return a promise
+
+        async function add()
+        {
+            let a = 10 , b=20;
+            console.log(a+b+" inside the function");
+            return a+b;
+        }
+
+        let x = add();
+        x.then((val)=>{
+            console.log(val);
+        })
+        console.log(x);
+
+        console.log("My name is Kalyan!");
+
+    </script>
+</body>
+</html>

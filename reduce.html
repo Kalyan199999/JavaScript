@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+<body>
+    <h1 id="max"></h1>
+    <script>
+        let arr = [5,8,1,4,10,2,19,0];
+
+       let max =  arr.reduce( (acc,ele)=>{
+            return acc>ele? acc:ele;
+        } , arr[0])
+
+        console.log(max);
+
+        let h1 = document.getElementById('max')
+        
+        h1.innerText = "Max ele in a array:"+max;
+        h1.style.color = "white";
+        h1.style.backgroundColor = "black";
+        h1.style.width = "100%";
+
+        
+    </script>
+</body>
+</html>

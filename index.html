@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM</title>
+
+</head>
+
+<body>
+
+    <div id="first">
+        
+        <h2 >Hi This is Kalyan!</h2>
+        <p>Hello This is Pavan!</p>
+
+    </div>
+
+    <div class="second">
+        
+        <h2 >123</h2>
+        <p>456</p>
+
+    </div>
+
+    <div class="second">
+        
+        <h2 >321</h2>
+        <p>654</p>
+
+    </div>
+
+    <script>
+
+        let id = document.getElementById("first");
+        console.log(id);
+
+        let clas = document.getElementsByClassName("second");
+        console.log(clas);
+        console.log(clas[0]);
+
+        let h2 = document.getElementsByTagName("h2");
+        console.log(h2);
+
+        let qs = document.querySelector(".second");
+        console.log(qs);
+
+        let qsa = document.querySelectorAll(".second");
+        console.log(qsa);
+
+        console.log(document.body);
+
+    </script>
+</body>
+</html>
